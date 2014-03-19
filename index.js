@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var dimensions = {height: 3, width: 3}
+  var dimensions = {height: 2, width: 4}
   var myLGA = new LifeGameApp(dimensions)
-  console.log(myLGA.board.state)
+  console.log(myLGA.cells)
 })
