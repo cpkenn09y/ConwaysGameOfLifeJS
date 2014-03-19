@@ -15,14 +15,14 @@ var prototype = {
     x += 1
     cells.push(new Cell([x,y], x, this.board.width, this.board.height))
 
-    for (var i=0; i<totalCells-2; i++) {
+    for (var index=2; index<totalCells; index++) {
       if(x == this.width-1) {
         x = 0
         y += 1
       } else {
         x += 1
       }
-      cells.push(new Cell([x,y], i+2, this.board.width, this.board.height))
+      cells.push(new Cell([x,y], index, this.board.width, this.board.height))
     }
     return cells
   }
