@@ -11,9 +11,9 @@ var prototype = {
     var cells = []
     var x = 0
     var y = 0
-    cells.push(new Cell([x,y], this.board.width, this.board.height))
+    cells.push(new Cell([x,y], x, this.board.width, this.board.height))
     x += 1
-    cells.push(new Cell([x,y], this.board.width, this.board.height))
+    cells.push(new Cell([x,y], x, this.board.width, this.board.height))
 
     for (var i=0; i<totalCells-2; i++) {
       if(x == this.width-1) {
@@ -22,10 +22,13 @@ var prototype = {
       } else {
         x += 1
       }
-      cells.push(new Cell([x,y], this.board.width, this.board.height))
+      cells.push(new Cell([x,y], i+2, this.board.width, this.board.height))
     }
     return cells
   }
 }
 
 LifeGameApp.prototype = prototype
+
+// Determine number of live neighboring cells
+// Advance a Generation
