@@ -1,13 +1,15 @@
-var Cell = function(coordinate, boardWidth, boardHeight){
+var Cell = function(coordinate, nthCell, boardWidth, boardHeight){
   this.status = "ON"
+  this.coordinate = coordinate
   this.x = coordinate[0]
   this.y = coordinate[1]
-  this.neighbors = this.getNeighborIndexes(boardWidth, boardHeight)
+  this.index = nthCell
+  this.neighborCoordinates = this.getNeighborCoordinates(boardWidth, boardHeight)
   return this
 }
 
 var prototype = {
-  getNeighborIndexes : function(boardWidth, boardHeight) {
+  getNeighborCoordinates : function(boardWidth, boardHeight) {
     var northWest = [this.x-1, this.y+1]
     var north = [this.x, this.y+1]
     var northEast = [this.x+1, this.y+1]
@@ -16,8 +18,8 @@ var prototype = {
     var southWest = [this.x-1, this.y-1]
     var south = [this.x, this.y-1]
     var southEast = [this.x+1, this.y-1]
-    var possibleNeighborIndexes = [northWest, north, northEast, west, east, southWest, south, southEast]
-    return _.filter(possibleNeighborIndexes, function(coordinate) {
+    var possibleNeighborCoordinates = [northWest, north, northEast, west, east, southWest, south, southEast]
+    return _.filter(possibleNeighborCoordinates, function(coordinate) {
       return coordinate[0] >= 0 && coordinate[0] < boardWidth && coordinate[1] >= 0 && coordinate[1] < boardHeight
     })
   }

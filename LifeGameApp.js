@@ -3,6 +3,7 @@ var LifeGameApp = function(dimensions) {
   this.width = this.board.width
   this.height = this.board.height
   this.cells = this.instantiateCells(this.board.totalUnits)
+  this.legend = this.createCoordinatesToIndexesMapping()
 }
 
 var prototype = {
@@ -25,10 +26,24 @@ var prototype = {
       cells.push(new Cell([x,y], index, this.board.width, this.board.height))
     }
     return cells
+  },
+  createCoordinatesToIndexesMapping: function() {
+    var coordinatesToIndexes = {}
+    this.cells.forEach(function(cell, index){
+      coordinatesToIndexes[cell.coordinate] = index
+    })
+    return coordinatesToIndexes
+  },
+  assignNeighborIndexes : function(cell) {
+    var self = this
+    cell.neighborIndexes = cell.neighborCoordinates.map(function(neighborCoordinate) {
+      return self.legend[''+neighborCoordinate]
+    })
+    return this.cells
+  },
+  assignNumberOfLiveNeighbors : function(cell) {
+
   }
 }
 
 LifeGameApp.prototype = prototype
-
-// Determine number of live neighboring cells
-// Advance a Generation
