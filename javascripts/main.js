@@ -1,6 +1,7 @@
 $(document).ready(function(){
   var dimensions = {height: 3, width: 3}
   var myCA = new ConwayApp(dimensions)
+  myCA.attachFormListener('form#conway-data')
   myCA.cells.forEach(function(cell) {
     myCA.assignNeighborIndexes(cell)
   })

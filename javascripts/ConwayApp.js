@@ -70,6 +70,16 @@ var prototype = {
     } else if (numberOfLiveNeighbors > 3) {
       return "OFF"
     }
+  },
+  attachFormListener : function(domElement) {
+    $(domElement).on('submit', function(event) {
+      event.preventDefault()
+      var name = this.name.value
+      var width = this.width.value
+      var height = this.height.value
+      var maxGenerations = this.generations.value
+      $(this).hide()
+    })
   }
 
 }
