@@ -4,6 +4,8 @@ var ConwayApp = function(dimensions) {
   this.height = this.board.height
   this.cells = this.instantiateCells(this.board.totalUnits)
   this.legend = this.createCoordinatesToIndexesMapping()
+  this.timeBetweenGenerations = 1000
+  this.timeUntilTriggerVerdict = this.timeBetweenGenerations / 2
   this.generation = 0
 }
 
@@ -55,7 +57,7 @@ var prototype = {
       self.assignNumberOfLiveNeighbors(cell)
       setTimeout(function() {
         cell.status = self.getStatusVerdict(cell.numberOfLiveNeighbors, cell.status)
-      }, 1000)
+      }, self.timeUntilTriggerVerdict)
     })
   },
   getStatusVerdict : function(numberOfLiveNeighbors, currentStatus) {

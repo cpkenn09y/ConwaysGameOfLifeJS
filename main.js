@@ -7,5 +7,5 @@ $(document).ready(function(){
   myCA.advanceGeneration()
   setTimeout(function() {
     myCA.advanceGeneration()
-  }, 2000)
+  }, myCA.timeBetweenGenerations)
 })
