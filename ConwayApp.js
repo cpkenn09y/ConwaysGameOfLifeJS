@@ -4,6 +4,7 @@ var ConwayApp = function(dimensions) {
   this.height = this.board.height
   this.cells = this.instantiateCells(this.board.totalUnits)
   this.legend = this.createCoordinatesToIndexesMapping()
+  this.generation = 0
 }
 
 var prototype = {
@@ -46,7 +47,29 @@ var prototype = {
     cell.numberOfLiveNeighbors = _.filter(cell.neighborIndexes, function(neighborIndex) {
       return self.cells[neighborIndex].status == 'ON'
     }).length
+  },
+  advanceGeneration : function() {
+    var self = this
+    self.generation += 1
+    this.cells.forEach(function(cell) {
+      self.assignNumberOfLiveNeighbors(cell)
+      setTimeout(function() {
+        cell.status = self.getStatusVerdict(cell.numberOfLiveNeighbors, cell.status)
+      }, 1000)
+    })
+  },
+  getStatusVerdict : function(numberOfLiveNeighbors, currentStatus) {
+    if (numberOfLiveNeighbors < 2) {
+      return "OFF"
+    } else if (numberOfLiveNeighbors == 2) {
+      return currentStatus
+    } else if (numberOfLiveNeighbors == 3) {
+      return "ON"
+    } else if (numberOfLiveNeighbors > 3) {
+      return "OFF"
+    }
   }
+
 }
 
 ConwayApp.prototype = prototype
