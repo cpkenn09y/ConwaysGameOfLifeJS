@@ -42,7 +42,10 @@ var prototype = {
     return this.cells
   },
   assignNumberOfLiveNeighbors : function(cell) {
-
+    var self = this
+    cell.numberOfLiveNeighbors = _.filter(cell.neighborIndexes, function(neighborIndex) {
+      return self.cells[neighborIndex].status == 'ON'
+    }).length
   }
 }
 
