@@ -1,4 +1,4 @@
-var LifeGameApp = function(dimensions) {
+var ConwayApp = function(dimensions) {
   this.board = new GameBoard(dimensions)
   this.width = this.board.width
   this.height = this.board.height
@@ -49,4 +49,4 @@ var prototype = {
   }
 }
 
-LifeGameApp.prototype = prototype
+ConwayApp.prototype = prototype
