@@ -27,3 +27,11 @@ div.grid-area td {
   text-align: center;
   border: 1px solid black;
 }
+
+td.ON {
+  background-color: green;
+}
+
+td.OFF {
+  background-color: red;
+}
