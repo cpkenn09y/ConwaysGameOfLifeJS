@@ -1,12 +1,15 @@
 $(document).ready(function(){
-  var dimensions = {height: 3, width: 3}
-  var myCA = new ConwayApp(dimensions)
-  myCA.attachFormListener('form#conway-data')
-  myCA.cells.forEach(function(cell) {
-    myCA.assignNeighborIndexes(cell)
+  var dimensions = {width: 5, height: 7}
+  var myConwayApp = new ConwayApp(dimensions)
+  myConwayApp.attachFormListener('form#conway-data')
+  var myView = new ConwayView('div.grid-area table', dimensions, '*  -  *')
+  myView.createGrid()
+
+  myConwayApp.cells.forEach(function(cell) {
+    myConwayApp.assignNeighborIndexes(cell)
   })
-  myCA.advanceGeneration()
+  myConwayApp.advanceGeneration()
   setTimeout(function() {
-    myCA.advanceGeneration()
-  }, myCA.timeBetweenGenerations)
+    myConwayApp.advanceGeneration()
+  }, myConwayApp.timeBetweenGenerations)
 })
