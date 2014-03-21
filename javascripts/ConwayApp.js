@@ -7,6 +7,7 @@ var ConwayApp = function(dimensions) {
   this.timeBetweenGenerations = 1000
   this.timeUntilTriggerVerdict = this.timeBetweenGenerations / 2
   this.generation = 0
+  this.View = new ConwayView('div.grid-area table', dimensions, 'Etsy')
 }
 
 var prototype = {
@@ -79,6 +80,12 @@ var prototype = {
       var height = this.height.value
       var maxGenerations = this.generations.value
       $(this).hide()
+    })
+  },
+  attachCssCellStatuses: function() {
+    var self = this
+    this.cells.forEach(function(cell,index) {
+      self.View.attachClassToCell(index, cell.status)
     })
   }
 

@@ -1,9 +1,10 @@
 $(document).ready(function(){
-  var dimensions = {width: 5, height: 7}
+  var dimensions = {width: 3, height: 3}
   var myConwayApp = new ConwayApp(dimensions)
   myConwayApp.attachFormListener('form#conway-data')
-  var myView = new ConwayView('div.grid-area table', dimensions, '*  -  *')
-  myView.createGrid()
+  myConwayApp.View.renderGrid()
+
+  myConwayApp.attachCssCellStatuses()
 
   myConwayApp.cells.forEach(function(cell) {
     myConwayApp.assignNeighborIndexes(cell)
