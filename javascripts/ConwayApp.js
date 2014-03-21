@@ -8,6 +8,7 @@ var ConwayApp = function(dimensions) {
   this.timeUntilTriggerVerdict = this.timeBetweenGenerations / 2
   this.generation = 0
   this.View = new ConwayView('div.grid-area table', dimensions, 'Etsy')
+  this.assignNeighborIndexes()
 }
 
 var prototype = {
@@ -38,10 +39,12 @@ var prototype = {
     })
     return coordinatesToIndexes
   },
-  assignNeighborIndexes : function(cell) {
+  assignNeighborIndexes : function() {
     var self = this
-    cell.neighborIndexes = cell.neighborCoordinates.map(function(neighborCoordinate) {
-      return self.legend[''+neighborCoordinate]
+    this.cells.forEach(function(cell) {
+      cell.neighborIndexes = cell.neighborCoordinates.map(function(neighborCoordinate) {
+        return self.legend[''+neighborCoordinate]
+      })
     })
     return this.cells
   },
