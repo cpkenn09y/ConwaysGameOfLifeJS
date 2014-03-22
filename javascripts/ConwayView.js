@@ -12,12 +12,12 @@ var prototype = {
       this.$el.append('<tr>'+('<td>'+this.avatar+'</td>').repeat(this.width)+'</tr>')
     }
   },
-  attachClassToCell : function(cellTdIndex, cssClass) {
+  giveTdIndexes: function() {
+    $('div.grid-area td').each(function(index) {this.setAttribute('id', index)})
+  },
+  attachClassToTd : function(cellTdIndex, cssClass) {
     $('div.grid-area td').eq(cellTdIndex).removeClass().addClass(cssClass)
   }
 }
 
 ConwayView.prototype = prototype
-
-// $('td').eq(5).addClass('on')
-

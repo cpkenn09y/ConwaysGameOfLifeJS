@@ -3,6 +3,7 @@ var ConwayApp = function(dimensions) {
   this.width = this.board.width
   this.height = this.board.height
   this.cells = this.instantiateCells(this.board.totalUnits)
+  this.CForm = new ConwayForm('form#conway-data')
   this.legend = this.createCoordinatesToIndexesMapping()
   this.timeBetweenGenerations = 1000
   this.timeUntilTriggerVerdict = this.timeBetweenGenerations / 2
@@ -13,6 +14,12 @@ var ConwayApp = function(dimensions) {
 
 var prototype = {
 
+  initializeGame : function() {
+    this.View.renderGrid()
+    this.View.giveTdIndexes()
+    this.attachCssCellStatuses()
+    this.CForm.attachFormListener('form#conway-data')
+  },
   instantiateCells : function(totalCells) {
     var cells = []
     var x = 0
@@ -75,20 +82,10 @@ var prototype = {
       return "OFF"
     }
   },
-  attachFormListener : function(domElement) {
-    $(domElement).on('submit', function(event) {
-      event.preventDefault()
-      var name = this.name.value
-      var width = this.width.value
-      var height = this.height.value
-      var maxGenerations = this.generations.value
-      $(this).hide()
-    })
-  },
   attachCssCellStatuses: function() {
     var self = this
     this.cells.forEach(function(cell,index) {
-      self.View.attachClassToCell(index, cell.status)
+      self.View.attachClassToTd(index, cell.status)
     })
   }
 
