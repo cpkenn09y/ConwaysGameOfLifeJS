@@ -1,5 +1,5 @@
 var Cell = function(coordinate, nthCell, boardWidth, boardHeight){
-  this.status = "ON"
+  this.status = Math.random() < 0.5 ? "ON" : "OFF"
   this.coordinate = coordinate
   this.x = coordinate[0]
   this.y = coordinate[1]
