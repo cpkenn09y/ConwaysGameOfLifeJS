@@ -2,9 +2,10 @@ $(document).ready(function(){
   $('form#conway-data').on('submit', function(event) {
     event.preventDefault()
     var conwayFormData = FormHelper.retrieveData(this)
-    var dimensions = {width: conwayFormData.width, height: conwayFormData.height}
+    FormHelper.remove('div#input-area')
 
-    myConwayApp = new ConwayApp(dimensions)
+    var dimensions = {width: conwayFormData.width, height: conwayFormData.height}
+    myConwayApp = new ConwayApp(dimensions, conwayFormData.name)
     myConwayApp.initializeGame()
 
     setIntervalX(function() {

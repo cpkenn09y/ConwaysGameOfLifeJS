@@ -16,6 +16,7 @@ var prototype = {
     for (var index=0; index<this.height; index++) {
       this.$container.append('<tr>'+('<td>'+this.avatar+'</td>').repeat(this.width)+'</tr>')
     }
+    if (this.width > 30) { this.$container.css('font-size', 8) }
   },
   giveTdIndexes: function() {
     this.$td.each(function(index) {this.setAttribute('id', index)})
@@ -24,7 +25,7 @@ var prototype = {
     this.$td.eq(cellTdIndex).removeClass().addClass(cssClass)
   },
   makeTdsIntoSquares : function() {
-    var averagePxForEachTd = $('div.grid-area').width()/this.width
+    var averagePxForEachTd = $('#grid-area').width()/this.width
     this.$td.css('width',averagePxForEachTd)
     this.$td.css('height',averagePxForEachTd)
   },

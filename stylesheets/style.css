@@ -11,10 +11,14 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
 }
 
-div.input-area {
+div#generation-counter {
+  text-align: center;
+}
+
+div#input-area {
   text-align: center;
   margin-top: 25%;
 }
@@ -23,7 +27,7 @@ form#conway-data input {
   text-align: center;
 }
 
-div.grid-area td {
+div#grid-area td {
   text-align: center;
   border: 1px solid black;
 }

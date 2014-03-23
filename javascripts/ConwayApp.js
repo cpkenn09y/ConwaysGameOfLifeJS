@@ -1,4 +1,4 @@
-var ConwayApp = function(dimensions) {
+var ConwayApp = function(dimensions, name) {
   this.board = new GameBoard(dimensions)
   this.width = this.board.width
   this.height = this.board.height
@@ -6,8 +6,8 @@ var ConwayApp = function(dimensions) {
   this.legend = this.createCoordinatesToIndexesMapping()
   this.timeBetweenGenerations = 1000
   this.timeUntilTriggerVerdict = this.timeBetweenGenerations / 2
+  this.View = new ConwayView('#grid-area table', '#generation-counter', dimensions, 'Etsy', name)
   this.generation = 0
-  this.View = new ConwayView('div.grid-area table', 'div#generation-counter', dimensions, 'Etsy')
   this.assignNeighborIndexes()
 }
 
