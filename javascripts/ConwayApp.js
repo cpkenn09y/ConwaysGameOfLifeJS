@@ -15,8 +15,6 @@ var ConwayApp = function(dimensions) {
 var prototype = {
 
   initializeGame : function() {
-    this.View.renderGrid()
-    this.View.giveTdIndexes()
     this.attachCssCellStatuses()
     this.CForm.attachFormListener('form#conway-data')
   },

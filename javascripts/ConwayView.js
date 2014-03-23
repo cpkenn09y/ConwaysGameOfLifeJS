@@ -1,22 +1,31 @@
-var ConwayView = function(domElement, dimensions, avatar) {
-  this.$el = $(domElement)
+var ConwayView = function(domContainer, dimensions, avatar) {
+  this.$container = $(domContainer)
   this.width = dimensions.width
   this.height = dimensions.height
   this.avatar = avatar
+  this.renderGrid()
+  this.$td = $(domContainer+' '+'td')
+  this.giveTdIndexes()
+  this.makeTdsIntoSquares()
   return this
 }
 
 var prototype = {
   renderGrid : function() {
     for (var index=0; index<this.height; index++) {
-      this.$el.append('<tr>'+('<td>'+this.avatar+'</td>').repeat(this.width)+'</tr>')
+      this.$container.append('<tr>'+('<td>'+this.avatar+'</td>').repeat(this.width)+'</tr>')
     }
   },
   giveTdIndexes: function() {
-    $('div.grid-area td').each(function(index) {this.setAttribute('id', index)})
+    this.$td.each(function(index) {this.setAttribute('id', index)})
   },
   attachClassToTd : function(cellTdIndex, cssClass) {
-    $('div.grid-area td').eq(cellTdIndex).removeClass().addClass(cssClass)
+    this.$td.eq(cellTdIndex).removeClass().addClass(cssClass)
+  },
+  makeTdsIntoSquares : function() {
+    var averagePxForEachTd = $('div.grid-area').width()/this.width
+    this.$td.css('width',averagePxForEachTd)
+    this.$td.css('height',averagePxForEachTd)
   }
 }
 

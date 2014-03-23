@@ -11,7 +11,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 90%;
+  width: 80%;
 }
 
 div.input-area {
@@ -29,9 +29,10 @@ div.grid-area td {
 }
 
 td.ON {
-  background-color: green;
+  background-color: cornflowerblue;
 }
 
 td.OFF {
-  background-color: red;
+  background-color: white;
+  opacity: 0;
 }
