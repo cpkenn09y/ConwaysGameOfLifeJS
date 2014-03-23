@@ -7,6 +7,7 @@ $(document).ready(function(){
     var dimensions = {width: conwayFormData.width, height: conwayFormData.height}
     var myConwayApp = new ConwayApp(dimensions, conwayFormData.name)
     myConwayApp.initializeGame()
+    myConwayApp.enableTogglingGridUnits()
     myConwayApp.View.appendNameToDom(conwayFormData.name)
     myConwayApp.View.appendGenerationCounter()
 

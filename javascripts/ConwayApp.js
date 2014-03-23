@@ -87,6 +87,18 @@ var prototype = {
     this.cells.forEach(function(cell,index) {
       self.View.attachClassToTd(index, cell.status)
     })
+  },
+  enableTogglingGridUnits : function() {
+    var self = this
+    $('div#grid-area td').on('click', function() {
+      if (this.className == "OFF") {
+        self.cells[Number(this.id)].status = "ON"
+        self.View.attachClassToTd(this.id, "ON")
+      } else {
+        self.cells[Number(this.id)].status = "OFF"
+        self.View.attachClassToTd(this.id, "OFF")
+      }
+    })
   }
 
 }
