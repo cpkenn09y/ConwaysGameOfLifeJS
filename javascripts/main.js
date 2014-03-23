@@ -5,8 +5,10 @@ $(document).ready(function(){
     FormHelper.remove('div#input-area')
 
     var dimensions = {width: conwayFormData.width, height: conwayFormData.height}
-    myConwayApp = new ConwayApp(dimensions, conwayFormData.name)
+    var myConwayApp = new ConwayApp(dimensions, conwayFormData.name)
     myConwayApp.initializeGame()
+    myConwayApp.View.appendNameToDom(conwayFormData.name)
+    myConwayApp.View.appendGenerationCounter()
 
     setIntervalX(function() {
       myConwayApp.advanceGeneration()

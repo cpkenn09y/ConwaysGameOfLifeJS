@@ -15,7 +15,6 @@ var prototype = {
 
   initializeGame : function() {
     this.attachCssCellStatuses()
-    this.View.appendGenerationCounter()
   },
   instantiateCells : function(totalCells) {
     var cells = []

@@ -14,6 +14,10 @@ body {
   width: 90%;
 }
 
+div#name-area {
+  text-align: center;
+}
+
 div#generation-counter {
   text-align: center;
 }

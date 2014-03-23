@@ -1,6 +1,6 @@
 var FormHelper = {
   retrieveData : function(form) {
-    var name = form.name.value
+    var name = form.name.value.capitalize()
     var width = form.width.value
     var height = form.height.value
     var maxGenerations = form.generations.value

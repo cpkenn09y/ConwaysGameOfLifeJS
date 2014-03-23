@@ -34,6 +34,9 @@ var prototype = {
   },
   updateGenerationCounter : function(generationNumber) {
     $('span#generation-counter').text(generationNumber)
+  },
+  appendNameToDom : function(name) {
+    $('div#name-area').append("<h1>"+name+"'s"+' '+'Game of Life</h1>')
   }
 
 }

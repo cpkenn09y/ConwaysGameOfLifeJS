@@ -26,6 +26,3 @@ var prototype = {
 }
 
 Cell.prototype = prototype
-
-
-
