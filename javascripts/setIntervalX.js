@@ -1,13 +1,13 @@
 // SOURCE - http://stackoverflow.com/questions/2956966/javascript-telling-setinterval-to-only-fire-x-amount-of-times
 
 function setIntervalX(callback, delay, repetitions) {
-    var x = 0;
-    var intervalID = window.setInterval(function () {
+  var x = 0;
+  var intervalID = window.setInterval(function () {
 
-       callback();
+     callback();
 
-       if (++x === repetitions) {
-           window.clearInterval(intervalID);
-       }
-    }, delay);
+     if (++x === repetitions) {
+         window.clearInterval(intervalID);
+     }
+  }, delay);
 }

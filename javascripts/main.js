@@ -1,10 +1,16 @@
 $(document).ready(function(){
-  var dimensions = {width: 30, height: 30}
-  myConwayApp = new ConwayApp(dimensions)
-  myConwayApp.initializeGame()
+  $('form#conway-data').on('submit', function(event) {
+    event.preventDefault()
+    var conwayFormData = FormHelper.retrieveData(this)
+    var dimensions = {width: conwayFormData.width, height: conwayFormData.height}
 
-  setInterval(function() {
-    myConwayApp.advanceGeneration()
-    myConwayApp.attachCssCellStatuses()
-  }, myConwayApp.timeBetweenGenerations)
+    myConwayApp = new ConwayApp(dimensions)
+    myConwayApp.initializeGame()
+
+    var generationCounter = 0
+    setIntervalX(function() {
+      myConwayApp.advanceGeneration()
+      // console.log(++generationCounter)
+    }, myConwayApp.timeBetweenGenerations, Number(conwayFormData.maxGenerations))
+  })
 })

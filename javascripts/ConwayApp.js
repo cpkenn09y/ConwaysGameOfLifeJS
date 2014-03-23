@@ -3,7 +3,6 @@ var ConwayApp = function(dimensions) {
   this.width = this.board.width
   this.height = this.board.height
   this.cells = this.instantiateCells(this.board.totalUnits)
-  this.CForm = new ConwayForm('form#conway-data')
   this.legend = this.createCoordinatesToIndexesMapping()
   this.timeBetweenGenerations = 1000
   this.timeUntilTriggerVerdict = this.timeBetweenGenerations / 2
@@ -16,7 +15,6 @@ var prototype = {
 
   initializeGame : function() {
     this.attachCssCellStatuses()
-    this.CForm.attachFormListener('form#conway-data')
   },
   instantiateCells : function(totalCells) {
     var cells = []
@@ -61,11 +59,12 @@ var prototype = {
   },
   advanceGeneration : function() {
     var self = this
-    self.generation += 1
     this.cells.forEach(function(cell) {
       self.assignNumberOfLiveNeighbors(cell)
       setTimeout(function() {
         cell.status = self.getStatusVerdict(cell.numberOfLiveNeighbors, cell.status)
+        self.attachCssCellStatuses()
+        self.generation += 1
       }, self.timeUntilTriggerVerdict)
     })
   },
