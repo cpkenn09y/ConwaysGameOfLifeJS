@@ -1,0 +1,46 @@
+html {
+  font-size: 16px
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'helvetica', 'arial', sans-serif;
+  background-color: antiquewhite;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+div#name-area {
+  text-align: center;
+}
+
+div#generation-counter {
+  text-align: center;
+}
+
+div#input-area {
+  text-align: center;
+  margin-top: 25%;
+}
+
+form#conway-data input {
+  text-align: center;
+}
+
+div#grid-area td {
+  text-align: center;
+  border: 1px solid black;
+}
+
+td.ON {
+  background-color: cornflowerblue;
+}
+
+td.OFF {
+  background-color: white;
+  opacity: 0;
+}

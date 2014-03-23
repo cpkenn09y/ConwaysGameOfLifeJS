@@ -1,4 +1,4 @@
-var ConwayApp = function(dimensions) {
+var ConwayApp = function(dimensions, name) {
   this.board = new GameBoard(dimensions)
   this.width = this.board.width
   this.height = this.board.height
@@ -6,11 +6,16 @@ var ConwayApp = function(dimensions) {
   this.legend = this.createCoordinatesToIndexesMapping()
   this.timeBetweenGenerations = 1000
   this.timeUntilTriggerVerdict = this.timeBetweenGenerations / 2
+  this.View = new ConwayView('#grid-area table', '#generation-counter', dimensions, 'Etsy', name)
   this.generation = 0
+  this.assignNeighborIndexes()
 }
 
 var prototype = {
 
+  initializeGame : function() {
+    this.attachCssCellStatuses()
+  },
   instantiateCells : function(totalCells) {
     var cells = []
     var x = 0
@@ -37,10 +42,12 @@ var prototype = {
     })
     return coordinatesToIndexes
   },
-  assignNeighborIndexes : function(cell) {
+  assignNeighborIndexes : function() {
     var self = this
-    cell.neighborIndexes = cell.neighborCoordinates.map(function(neighborCoordinate) {
-      return self.legend[''+neighborCoordinate]
+    this.cells.forEach(function(cell) {
+      cell.neighborIndexes = cell.neighborCoordinates.map(function(neighborCoordinate) {
+        return self.legend[''+neighborCoordinate]
+      })
     })
     return this.cells
   },
@@ -52,13 +59,17 @@ var prototype = {
   },
   advanceGeneration : function() {
     var self = this
-    self.generation += 1
     this.cells.forEach(function(cell) {
       self.assignNumberOfLiveNeighbors(cell)
       setTimeout(function() {
         cell.status = self.getStatusVerdict(cell.numberOfLiveNeighbors, cell.status)
       }, self.timeUntilTriggerVerdict)
     })
+    setTimeout(function() {
+      self.attachCssCellStatuses()
+      self.generation += 1
+      self.View.updateGenerationCounter(self.generation)
+    }, self.timeUntilTriggerVerdict)
   },
   getStatusVerdict : function(numberOfLiveNeighbors, currentStatus) {
     if (numberOfLiveNeighbors < 2) {
@@ -70,6 +81,12 @@ var prototype = {
     } else if (numberOfLiveNeighbors > 3) {
       return "OFF"
     }
+  },
+  attachCssCellStatuses: function() {
+    var self = this
+    this.cells.forEach(function(cell,index) {
+      self.View.attachClassToTd(index, cell.status)
+    })
   }
 
 }
