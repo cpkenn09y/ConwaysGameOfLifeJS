@@ -7,7 +7,7 @@ var ConwayApp = function(dimensions) {
   this.timeBetweenGenerations = 1000
   this.timeUntilTriggerVerdict = this.timeBetweenGenerations / 2
   this.generation = 0
-  this.View = new ConwayView('div.grid-area table', dimensions, 'Etsy')
+  this.View = new ConwayView('div.grid-area table', 'div#generation-counter', dimensions, 'Etsy')
   this.assignNeighborIndexes()
 }
 
@@ -15,6 +15,7 @@ var prototype = {
 
   initializeGame : function() {
     this.attachCssCellStatuses()
+    this.View.appendGenerationCounter()
   },
   instantiateCells : function(totalCells) {
     var cells = []
@@ -63,10 +64,13 @@ var prototype = {
       self.assignNumberOfLiveNeighbors(cell)
       setTimeout(function() {
         cell.status = self.getStatusVerdict(cell.numberOfLiveNeighbors, cell.status)
-        self.attachCssCellStatuses()
-        self.generation += 1
       }, self.timeUntilTriggerVerdict)
     })
+    setTimeout(function() {
+      self.attachCssCellStatuses()
+      self.generation += 1
+      self.View.updateGenerationCounter(self.generation)
+    }, self.timeUntilTriggerVerdict)
   },
   getStatusVerdict : function(numberOfLiveNeighbors, currentStatus) {
     if (numberOfLiveNeighbors < 2) {

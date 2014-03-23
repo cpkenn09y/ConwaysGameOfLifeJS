@@ -7,10 +7,8 @@ $(document).ready(function(){
     myConwayApp = new ConwayApp(dimensions)
     myConwayApp.initializeGame()
 
-    var generationCounter = 0
     setIntervalX(function() {
       myConwayApp.advanceGeneration()
-      // console.log(++generationCounter)
     }, myConwayApp.timeBetweenGenerations, Number(conwayFormData.maxGenerations))
   })
 })
