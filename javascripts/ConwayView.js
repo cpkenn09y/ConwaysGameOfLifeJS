@@ -1,5 +1,5 @@
 var ConwayView = function(domGridContainer, domGenerationCounter, dimensions, avatar) {
-  this.$container = $(domGridContainer)
+  this.$gridContainer = $(domGridContainer)
   this.$generation = $(domGenerationCounter)
   this.width = dimensions.width
   this.height = dimensions.height
@@ -13,16 +13,22 @@ var ConwayView = function(domGridContainer, domGenerationCounter, dimensions, av
 
 var prototype = {
   renderGrid : function() {
+    if (this.width > 30) { this.$gridContainer.css('font-size', 8) }
+    if (this.width > 50) { this.avatar = ''}
     for (var index=0; index<this.height; index++) {
-      this.$container.append('<tr>'+('<td>'+this.avatar+'</td>').repeat(this.width)+'</tr>')
+      this.$gridContainer.append('<tr>'+('<td>'+this.avatar+'</td>').repeat(this.width)+'</tr>')
     }
-    if (this.width > 30) { this.$container.css('font-size', 8) }
+
   },
   giveTdIndexes: function() {
     this.$td.each(function(index) {this.setAttribute('id', index)})
   },
   attachClassToTd : function(cellTdIndex, cssClass) {
-    this.$td.eq(cellTdIndex).removeClass().addClass(cssClass)
+    if (this.$td[cellTdIndex].className == cssClass) {
+      return
+    } else {
+      this.$td.eq(cellTdIndex).removeClass().addClass(cssClass)
+    }
   },
   makeTdsIntoSquares : function() {
     var averagePxForEachTd = $('#grid-area').width()/this.width
