@@ -90,7 +90,7 @@ span#generation-counter {
 }
 
 span#click-tip {
-  color: rgb(188, 11, 23);
+  color: chartreuse;
   text-shadow: 0 0 10px #292B2D;
 }
 
