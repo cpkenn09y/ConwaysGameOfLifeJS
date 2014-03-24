@@ -31,10 +31,11 @@ Artfully craft code that is modular, object oriented, and readable.
 
 * Write unit tests and integration tests to ensure stability
 * Make app responsive to different device screen sizes
-* Allow for any number to be accepted for width/height without taking away from the aesthetics
 * Improve the overall user experience
+* Allow for any number to be accepted for width/height without taking away from the aesthetics
 * Decrease the time it takes to load in assets via Require.js and code minification
-* Keep refactoring code
+* Consider adding a backend to do server-side logic: to free up client-side processing power
+* Keep refactoring code for increased efficiency and readability
 
 ## Tech Choices
 * Javascript to allow users to interact and customize the game in the browser
