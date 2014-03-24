@@ -115,3 +115,8 @@ h1.title:hover {
 #submit-button:hover {
   opacity: 0.8;
 }
+
+td:hover {
+opacity: 0.5;
+cursor: pointer;
+}
