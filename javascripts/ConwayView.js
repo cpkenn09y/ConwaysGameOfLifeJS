@@ -8,6 +8,7 @@ var ConwayView = function(domGridContainer, domGenerationCounter, dimensions, av
   this.$td = $(domGridContainer+' '+'td')
   this.giveTdIndexes()
   this.makeTdsIntoSquares()
+  this.makeTdsResponsiveToResize()
   return this
 }
 
@@ -18,7 +19,6 @@ var prototype = {
     for (var index=0; index<this.height; index++) {
       this.$gridContainer.append('<tr>'+('<td>'+this.avatar+'</td>').repeat(this.width)+'</tr>')
     }
-
   },
   giveTdIndexes: function() {
     this.$td.each(function(index) {this.setAttribute('id', index)})
@@ -52,6 +52,12 @@ var prototype = {
   },
   expandContainer : function() {
     $('div.container').css('width', '100%')
+  },
+  makeTdsResponsiveToResize : function() {
+    var self = this
+    $(window).on('resize', function() {
+      self.makeTdsIntoSquares()
+    })
   }
 }
 
