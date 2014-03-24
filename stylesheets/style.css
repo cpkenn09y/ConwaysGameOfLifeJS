@@ -27,13 +27,19 @@ h1.title {
 }
 
 h1#welcome {
-  padding-top: 8%;
+  padding-top: 6.5%;
+}
+
+h1#user {
+  text-decoration: underline;
+  background-color: rgba(88, 104, 123, 0.5);
 }
 
 span.header {
   background-color:rgba(202, 211, 199, 0.85);
   font-family: cursive, "Comic Sans MS", sans-serif;
   border: 5px solid rgba(86, 17, 17, 0.6);
+  color: rgb(75, 62, 14);
 }
 
 form#conway-data input {
@@ -41,29 +47,71 @@ form#conway-data input {
 }
 
 form#conway-data {
-  padding-bottom: 8%;
+  padding-bottom: 6.5%;
+}
+
+label#tip {
+  color: rgb(179, 220, 60);
+  text-shadow:0 0 10px #292B2D;
 }
 
 #submit-button {
   width: 80%;
   background-color: rgba(0,70,0,0.5);
   height: 2em;
-  margin-top: 2em;
+  margin-top: 1em;
   border-radius: 2em;
   font-size: 2em;
   color: aliceblue;
   font-family: Courier, monospace;
 }
 
+div#grid-area {
+  background-color: rgba(0,0,0,0.65);
+}
+
 div#grid-area td {
   border: 1px solid black;
 }
 
+div#generation-counter {
+  background-color: rgba(88, 104, 123, 0.5);
+}
+
+span#generation-intro {
+  color: azure;
+  text-shadow: 0 0 10px #292B2D;
+}
+
+span#generation-counter {
+  border: inset;
+  background-color: rgb(237, 232, 41);
+  border-radius: 0.3em;
+}
+
+span#click-tip {
+  color: rgb(188, 11, 23);
+  text-shadow: 0 0 10px #292B2D;
+}
+
 td.ON {
-  background-color: cornflowerblue;
+  background-color: darkgreen;
 }
 
 td.OFF {
   background-color: white;
   opacity: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1.title:hover {
+  opacity: 0.8;
+}
+
+#submit-button:hover {
+  opacity: 0.8;
 }

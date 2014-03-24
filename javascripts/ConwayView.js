@@ -36,15 +36,17 @@ var prototype = {
     this.$td.css('height',averagePxForEachTd)
   },
   appendGenerationCounter : function() {
-    this.$generation.append("<h1>Generation Number: <span id='generation-counter'>0</span></h1>")
+    this.$generation.append("<h1><span id='generation-intro'>Generation Number: </span><span id='generation-counter'>0</span> -&#187<span id='click-tip'>Try Clicking on Squares!</span></h1>")
   },
   updateGenerationCounter : function(generationNumber) {
     $('span#generation-counter').text(generationNumber)
   },
   appendNameToDom : function(name) {
-    $('div#name-area').append("<h1 class='title'>*"+name+"'s"+' '+'Game of Life*</h1>')
+    $('div#name-area').append("<a href='#' target='_blank'><h1 class='title' id='user'><span class='header'>* "+name+"'s"+' '+'Game of Life *</span></h1></a>')
+  },
+  expandContainer : function() {
+    $('div.container').css('width', '100%')
   }
-
 }
 
 ConwayView.prototype = prototype
