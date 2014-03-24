@@ -58,7 +58,12 @@ Artfully craft code that is modular, object oriented, and readable.
 * Click on the grid squares to turn cells "ON" and "OFF"
 * The game will continue forever if you do not specify the number of generations
   * Once it reaches a steady state, bring the game back to life by clicking on squares!
-* For Developers: Remove the maximum width and height limitations on the form, put in ridiculously high numbers and zoom out
 
+#### Images:
 Working layout as of March 23rd:
 ![image](http://i.imgur.com/psN9nhk.png)
+
+Working layout as of March 24th:
+![image](http://i.imgur.com/0agM1IU.png)
+![image](http://i.imgur.com/AF9F5V9.png)
+
