@@ -61,6 +61,11 @@ Artfully craft code that is modular, object oriented, and readable.
   * Once it reaches a steady state, bring the game back to life by clicking on squares!
 * Create a pattern before pressing the 'Start!' button
 
+#### Fun Features to Consider:
+* Add pokemon start up music on welcome page
+* Add pokemon battle music after form submitted
+* Animate some fireworks after pushing 'Start!' button
+
 #### Images:
 Working layout as of March 23rd:
 ![image](http://i.imgur.com/psN9nhk.png)
