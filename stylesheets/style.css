@@ -6,41 +6,112 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: 'helvetica', 'arial', sans-serif;
-  background-color: antiquewhite;
+  background-image: url('http://i.imgur.com/ffHEGpB.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
 .container {
   margin: 0 auto;
   width: 90%;
+  text-align: center;
+  background-color: rgba(88, 104, 123, 0.5);
 }
 
-div#name-area {
-  text-align: center;
+h1.title {
+  font-size: 5em;
+  font-family: cursive, "Comic Sans MS", sans-serif;
 }
 
-div#generation-counter {
-  text-align: center;
+h1#welcome {
+  padding-top: 6.5%;
 }
 
-div#input-area {
-  text-align: center;
-  margin-top: 25%;
+h1#user {
+  text-decoration: underline;
+  background-color: rgba(88, 104, 123, 0.5);
+}
+
+span.header {
+  background-color:rgba(202, 211, 199, 0.85);
+  font-family: cursive, "Comic Sans MS", sans-serif;
+  border: 5px solid rgba(86, 17, 17, 0.6);
+  color: rgb(75, 62, 14);
 }
 
 form#conway-data input {
   text-align: center;
 }
 
+form#conway-data {
+  padding-bottom: 6.5%;
+}
+
+label#tip {
+  color: rgb(179, 220, 60);
+  text-shadow:0 0 10px #292B2D;
+}
+
+#submit-button {
+  width: 80%;
+  background-color: rgba(0,70,0,0.5);
+  height: 2em;
+  margin-top: 1em;
+  border-radius: 2em;
+  font-size: 2em;
+  color: aliceblue;
+  font-family: Courier, monospace;
+}
+
+div#grid-area {
+  background-color: rgba(0,0,0,0.65);
+}
+
 div#grid-area td {
-  text-align: center;
   border: 1px solid black;
 }
 
+div#generation-counter {
+  background-color: rgba(88, 104, 123, 0.5);
+}
+
+span#generation-intro {
+  color: azure;
+  text-shadow: 0 0 10px #292B2D;
+}
+
+span#generation-counter {
+  border: inset;
+  background-color: rgb(237, 232, 41);
+  border-radius: 0.3em;
+}
+
+span#click-tip {
+  color: rgb(188, 11, 23);
+  text-shadow: 0 0 10px #292B2D;
+}
+
 td.ON {
-  background-color: cornflowerblue;
+  background-color: darkgreen;
 }
 
 td.OFF {
   background-color: white;
   opacity: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1.title:hover {
+  opacity: 0.8;
+}
+
+#submit-button:hover {
+  opacity: 0.8;
 }

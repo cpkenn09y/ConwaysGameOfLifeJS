@@ -67,6 +67,7 @@ var prototype = {
     })
     setTimeout(function() {
       self.attachCssCellStatuses()
+      self.randomizeTdColor()
       self.generation += 1
       self.View.updateGenerationCounter(self.generation)
     }, self.timeUntilTriggerVerdict)
@@ -87,6 +88,21 @@ var prototype = {
     this.cells.forEach(function(cell,index) {
       self.View.attachClassToTd(index, cell.status)
     })
+  },
+  enableTogglingGridUnits : function() {
+    var self = this
+    $('div#grid-area td').on('click', function() {
+      if (this.className == "OFF") {
+        self.cells[Number(this.id)].status = "ON"
+        self.View.attachClassToTd(this.id, "ON")
+      } else {
+        self.cells[Number(this.id)].status = "OFF"
+        self.View.attachClassToTd(this.id, "OFF")
+      }
+    })
+  },
+  randomizeTdColor : function() {
+    $('td.ON').css('background-color', Color.randomHex())
   }
 
 }
