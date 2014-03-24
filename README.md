@@ -31,10 +31,11 @@ Artfully craft code that is modular, object oriented, and readable.
 
 * Write unit tests and integration tests to ensure stability
 * Make app responsive to different device screen sizes
-* Allow for any number to be accepted for width/height without taking away from the aesthetics
 * Improve the overall user experience
+* Allow for any number to be accepted for width/height without taking away from the aesthetics
 * Decrease the time it takes to load in assets via Require.js and code minification
-* Keep refactoring code
+* Consider adding a backend to do server-side logic: to free up client-side processing power
+* Keep refactoring code for increased efficiency and readability
 
 ## Tech Choices
 * Javascript to allow users to interact and customize the game in the browser
@@ -58,7 +59,13 @@ Artfully craft code that is modular, object oriented, and readable.
 * Click on the grid squares to turn cells "ON" and "OFF"
 * The game will continue forever if you do not specify the number of generations
   * Once it reaches a steady state, bring the game back to life by clicking on squares!
-* For Developers: Remove the maximum width and height limitations on the form, put in ridiculously high numbers and zoom out
+* Create a pattern before pressing the 'Start!' button
 
+#### Images:
 Working layout as of March 23rd:
 ![image](http://i.imgur.com/psN9nhk.png)
+
+Working layout as of March 24th:
+![image](http://i.imgur.com/0agM1IU.png)
+![image](http://i.imgur.com/AF9F5V9.png)
+

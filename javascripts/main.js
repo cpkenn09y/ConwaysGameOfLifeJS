@@ -11,9 +11,13 @@ $(document).ready(function(){
     myConwayApp.View.expandContainer()
     myConwayApp.View.appendNameToDom(conwayFormData.name)
     myConwayApp.View.appendGenerationCounter()
+    myConwayApp.View.appendStartButton()
 
-    setIntervalX(function() {
-      myConwayApp.advanceGeneration()
-    }, myConwayApp.timeBetweenGenerations, Number(conwayFormData.maxGenerations))
+    $('div#start-button').on('click', 'button#start', function() {
+      myConwayApp.View.removeStartButton()
+      setIntervalX(function() {
+        myConwayApp.advanceGeneration()
+      }, myConwayApp.timeBetweenGenerations, Number(conwayFormData.maxGenerations))
+    })
   })
 })
