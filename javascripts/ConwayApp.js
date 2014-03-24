@@ -67,6 +67,7 @@ var prototype = {
     })
     setTimeout(function() {
       self.attachCssCellStatuses()
+      self.randomizeTdColor()
       self.generation += 1
       self.View.updateGenerationCounter(self.generation)
     }, self.timeUntilTriggerVerdict)
@@ -99,6 +100,9 @@ var prototype = {
         self.View.attachClassToTd(this.id, "OFF")
       }
     })
+  },
+  randomizeTdColor : function() {
+    $('td.ON').css('background-color', Color.randomHex())
   }
 
 }
