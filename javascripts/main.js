@@ -3,6 +3,9 @@ $(document).ready(function(){
     event.preventDefault()
     var conwayFormData = FormHelper.retrieveData(this)
     FormHelper.remove('div#input-area')
+    $('body').css('background-image', 'none')
+    $('body').css('background-color', 'antiquewhite')
+    $('div.container').css('background-color', 'transparent')
 
     var dimensions = {width: conwayFormData.width, height: conwayFormData.height}
     var myConwayApp = new ConwayApp(dimensions, conwayFormData.name)

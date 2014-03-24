@@ -6,33 +6,56 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: 'helvetica', 'arial', sans-serif;
-  background-color: antiquewhite;
+  background-image: url('http://i.imgur.com/ffHEGpB.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
 .container {
   margin: 0 auto;
   width: 90%;
+  text-align: center;
+  background-color: rgba(88, 104, 123, 0.5);
 }
 
-div#name-area {
-  text-align: center;
+h1.title {
+  font-size: 5em;
+  font-family: cursive, "Comic Sans MS", sans-serif;
 }
 
-div#generation-counter {
-  text-align: center;
+h1#welcome {
+  padding-top: 8%;
 }
 
-div#input-area {
-  text-align: center;
-  margin-top: 25%;
+span.header {
+  background-color:rgba(202, 211, 199, 0.85);
+  font-family: cursive, "Comic Sans MS", sans-serif;
+  border: 5px solid rgba(86, 17, 17, 0.6);
 }
 
 form#conway-data input {
   text-align: center;
 }
 
+form#conway-data {
+  padding-bottom: 8%;
+}
+
+#submit-button {
+  width: 80%;
+  background-color: rgba(0,70,0,0.5);
+  height: 2em;
+  margin-top: 2em;
+  border-radius: 2em;
+  font-size: 2em;
+  color: aliceblue;
+  font-family: Courier, monospace;
+}
+
 div#grid-area td {
-  text-align: center;
   border: 1px solid black;
 }
 
