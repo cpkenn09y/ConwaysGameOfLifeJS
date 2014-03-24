@@ -55,7 +55,7 @@ label#tip {
   text-shadow:0 0 10px #292B2D;
 }
 
-#submit-button {
+.submit-button {
   width: 80%;
   background-color: rgba(0,70,0,0.5);
   height: 2em;
@@ -94,6 +94,10 @@ span#click-tip {
   text-shadow: 0 0 10px #292B2D;
 }
 
+button#start {
+  margin-bottom: 1em;
+}
+
 td.ON {
   background-color: darkgreen;
 }
@@ -112,11 +116,11 @@ h1.title:hover {
   opacity: 0.8;
 }
 
-#submit-button:hover {
+.submit-button:hover {
   opacity: 0.8;
 }
 
 td:hover {
-opacity: 0.5;
-cursor: pointer;
+  opacity: 0.5;
+  cursor: pointer;
 }

@@ -44,6 +44,12 @@ var prototype = {
   appendNameToDom : function(name) {
     $('div#name-area').append("<a href='#' target='_blank'><h1 class='title' id='user'><span class='header'>* "+name+"'s"+' '+'Game of Life *</span></h1></a>')
   },
+  appendStartButton : function() {
+    $('div#start-button').append("<button class='submit-button' id='start'>Start!</button>")
+  },
+  removeStartButton : function() {
+    $('div#start-button').remove()
+  },
   expandContainer : function() {
     $('div.container').css('width', '100%')
   }

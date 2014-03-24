@@ -59,6 +59,7 @@ Artfully craft code that is modular, object oriented, and readable.
 * Click on the grid squares to turn cells "ON" and "OFF"
 * The game will continue forever if you do not specify the number of generations
   * Once it reaches a steady state, bring the game back to life by clicking on squares!
+* Create a pattern before pressing the 'Start!' button
 
 #### Images:
 Working layout as of March 23rd:
