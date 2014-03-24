@@ -30,7 +30,7 @@ Artfully craft code that is modular, object oriented, and readable.
 ## Future Improvements
 
 * Write unit tests and integration tests to ensure stability
-* Make app responsive to different device screen sizes
+* Make app responsive to different browsers
 * Improve the overall user experience
 * Allow for any number to be accepted for width/height without taking away from the aesthetics
 * Decrease the time it takes to load in assets via Require.js and code minification
