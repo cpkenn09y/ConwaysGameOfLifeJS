@@ -33,7 +33,8 @@ Artfully craft code that is modular, object oriented, and readable.
 * Make app responsive to different browsers
 * Improve the overall user experience
 * Allow for any number to be accepted for width/height without taking away from the aesthetics
-* Decrease the time it takes to load in assets via Require.js and code minification
+* Decrease the time it takes to load in assets
+* Minify code
 * Consider adding a backend to do server-side logic: to free up client-side processing power
 * Keep refactoring code for increased efficiency and readability
 
