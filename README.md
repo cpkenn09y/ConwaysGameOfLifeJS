@@ -3,7 +3,7 @@
 Created a javascript implementation of Conway's Game of Life.
 
 Rules Regarding Advancement to Next Generation:
-[http://en.wikipedia.org/wiki/Conway's_Game_of_Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life)
+[Awesome Video Explaining Rules](http://www.youtube.com/watch?v=CgOcEZinQ2I)
 
 1. Less than 2 live neighbors => "OFF"
 2. Exactly 2 live neighbors => keep its same status
