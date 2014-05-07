@@ -50,6 +50,9 @@ var prototype = {
   removeStartButton : function() {
     $('div#start-button').remove()
   },
+  appendRepoLink : function() {
+    $('div#repo-link').append('<a href="https://github.com/cpkenn09y/ConwaysGameOfLifeJS">Link to Code</a>')
+  },
   expandContainer : function() {
     $('div.container').css('width', '100%')
   },
