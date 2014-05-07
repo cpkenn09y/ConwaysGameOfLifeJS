@@ -31,7 +31,7 @@ var prototype = {
     }
   },
   makeTdsIntoSquares : function() {
-    var averagePxForEachTd = $('#grid-area').width()/this.width
+    var averagePxForEachTd = $(window).width()/this.width
     this.$td.css('width',averagePxForEachTd)
     this.$td.css('height',averagePxForEachTd)
   },
@@ -42,13 +42,19 @@ var prototype = {
     $('span#generation-counter').text(generationNumber)
   },
   appendNameToDom : function(name) {
-    $('div#name-area').append("<a href='#' target='_blank'><h1 class='title' id='user'><span class='header'>* "+name+"'s"+' '+'Game of Life *</span></h1></a>')
+    $('div#name-area').append("<h1 class='title' id='user'><a href='#' target='_blank'><span class='header'>* "+name+"'s"+' '+'Game of Life *</span></a></h1>')
   },
   appendStartButton : function() {
     $('div#start-button').append("<button class='submit-button' id='start'>Start!</button>")
   },
   removeStartButton : function() {
     $('div#start-button').remove()
+  },
+  appendMyLinks : function() {
+    $('div#my-links').append('<span id="my-links"><a href="https://github.com/cpkenn09y/ConwaysGameOfLifeJS" target="_blank">Link to Code</a></span>')
+    $('div#my-links').append('<span id="my-links"><a href="http://cpkenn09y.github.io" target="_blank">My Other Projects</a></span>')
+    $('div#my-links').append('<span id="my-links"><a href="http://www.youtube.com/watch?v=CgOcEZinQ2I" target="_blank">Learn what is happening below</a></span>')
+    $('div#my-links').append('<span id="my-links"><a href="mailto:kenyu@ucdavis.edu" target="_blank">Email Me</a></span>')
   },
   expandContainer : function() {
     $('div.container').css('width', '100%')

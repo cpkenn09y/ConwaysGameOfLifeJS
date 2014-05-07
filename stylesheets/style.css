@@ -50,6 +50,10 @@ form#conway-data {
   padding-bottom: 6.5%;
 }
 
+input {
+  width: 15em;
+}
+
 label#tip {
   color: rgb(179, 220, 60);
   text-shadow:0 0 10px #292B2D;
@@ -68,10 +72,18 @@ label#tip {
 
 div#grid-area {
   background-color: rgba(0,0,0,0.65);
+  margin-top: 1em;
 }
 
 div#grid-area td {
   border: 1px solid black;
+}
+
+span#my-links {
+  border: 1px solid black;
+  font-family: cursive, "Comic Sans MS", sans-serif;
+  color: black;
+  margin-left: 1em;
 }
 
 div#generation-counter {
@@ -112,8 +124,12 @@ a {
   color: inherit;
 }
 
-h1.title:hover {
+span.header:hover {
   opacity: 0.8;
+}
+
+span#my-links:hover {
+  background-color: gold;
 }
 
 .submit-button:hover {
