@@ -3,7 +3,7 @@
 Created a javascript implementation of Conway's Game of Life.
 
 Rules Regarding Advancement to Next Generation:
-[http://en.wikipedia.org/wiki/Conway's_Game_of_Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life)
+[Awesome Video Explaining Rules](http://www.youtube.com/watch?v=CgOcEZinQ2I)
 
 1. Less than 2 live neighbors => "OFF"
 2. Exactly 2 live neighbors => keep its same status
@@ -30,10 +30,11 @@ Artfully craft code that is modular, object oriented, and readable.
 ## Future Improvements
 
 * Write unit tests and integration tests to ensure stability
-* Make app responsive to different device screen sizes
+* Make app responsive to different browsers
 * Improve the overall user experience
 * Allow for any number to be accepted for width/height without taking away from the aesthetics
-* Decrease the time it takes to load in assets via Require.js and code minification
+* Decrease the time it takes to load in assets
+* Minify code
 * Consider adding a backend to do server-side logic: to free up client-side processing power
 * Keep refactoring code for increased efficiency and readability
 
