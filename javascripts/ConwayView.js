@@ -51,7 +51,7 @@ var prototype = {
     $('div#start-button').remove()
   },
   appendRepoLink : function() {
-    $('div#repo-link').append('<a href="https://github.com/cpkenn09y/ConwaysGameOfLifeJS">Link to Code</a>')
+    $('div#repo-link').append('<span id="repo-link"><a href="https://github.com/cpkenn09y/ConwaysGameOfLifeJS">Link to Code</a></span>')
   },
   expandContainer : function() {
     $('div.container').css('width', '100%')

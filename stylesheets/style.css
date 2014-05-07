@@ -68,10 +68,17 @@ label#tip {
 
 div#grid-area {
   background-color: rgba(0,0,0,0.65);
+  margin-top: 1em;
 }
 
 div#grid-area td {
   border: 1px solid black;
+}
+
+span#repo-link {
+  border: 1px solid black;
+  font-family: cursive, "Comic Sans MS", sans-serif;
+  color: black;
 }
 
 div#generation-counter {
@@ -114,6 +121,10 @@ a {
 
 span.header:hover {
   opacity: 0.8;
+}
+
+span#repo-link:hover {
+  background-color: gold;
 }
 
 .submit-button:hover {
