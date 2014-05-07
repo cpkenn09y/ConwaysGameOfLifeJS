@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     $('div#start-button').on('click', 'button#start', function() {
       myConwayApp.View.removeStartButton()
-      myConwayApp.View.appendRepoLink()
+      myConwayApp.View.appendMyLinks()
       setIntervalX(function() {
         myConwayApp.advanceGeneration()
       }, myConwayApp.timeBetweenGenerations, Number(conwayFormData.maxGenerations))

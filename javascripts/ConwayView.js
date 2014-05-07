@@ -50,8 +50,10 @@ var prototype = {
   removeStartButton : function() {
     $('div#start-button').remove()
   },
-  appendRepoLink : function() {
-    $('div#repo-link').append('<span id="repo-link"><a href="https://github.com/cpkenn09y/ConwaysGameOfLifeJS">Link to Code</a></span>')
+  appendMyLinks : function() {
+    $('div#my-links').append('<span id="my-links"><a href="https://github.com/cpkenn09y/ConwaysGameOfLifeJS" target="_blank">Link to Code</a></span>')
+    $('div#my-links').append('<span id="my-links"><a href="http://cpkenn09y.github.io" target="_blank">My Other Projects</a></span>')
+    $('div#my-links').append('<span id="my-links"><a href="mailto:kenyu@ucdavis.edu" target="_blank">Email Me</a></span>')
   },
   expandContainer : function() {
     $('div.container').css('width', '100%')
