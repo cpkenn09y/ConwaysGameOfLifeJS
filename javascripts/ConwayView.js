@@ -31,7 +31,7 @@ var prototype = {
     }
   },
   makeTdsIntoSquares : function() {
-    var averagePxForEachTd = $('#grid-area').width()/this.width
+    var averagePxForEachTd = $(window).width()/this.width
     this.$td.css('width',averagePxForEachTd)
     this.$td.css('height',averagePxForEachTd)
   },
@@ -53,6 +53,7 @@ var prototype = {
   appendMyLinks : function() {
     $('div#my-links').append('<span id="my-links"><a href="https://github.com/cpkenn09y/ConwaysGameOfLifeJS" target="_blank">Link to Code</a></span>')
     $('div#my-links').append('<span id="my-links"><a href="http://cpkenn09y.github.io" target="_blank">My Other Projects</a></span>')
+    $('div#my-links').append('<span id="my-links"><a href="http://www.youtube.com/watch?v=CgOcEZinQ2I" target="_blank">Learn what is happening below</a></span>')
     $('div#my-links').append('<span id="my-links"><a href="mailto:kenyu@ucdavis.edu" target="_blank">Email Me</a></span>')
   },
   expandContainer : function() {

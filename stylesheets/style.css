@@ -50,6 +50,10 @@ form#conway-data {
   padding-bottom: 6.5%;
 }
 
+input {
+  width: 15em;
+}
+
 label#tip {
   color: rgb(179, 220, 60);
   text-shadow:0 0 10px #292B2D;
