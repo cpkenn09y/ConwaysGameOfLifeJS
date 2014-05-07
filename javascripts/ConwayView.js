@@ -42,7 +42,7 @@ var prototype = {
     $('span#generation-counter').text(generationNumber)
   },
   appendNameToDom : function(name) {
-    $('div#name-area').append("<a href='#' target='_blank'><h1 class='title' id='user'><span class='header'>* "+name+"'s"+' '+'Game of Life *</span></h1></a>')
+    $('div#name-area').append("<h1 class='title' id='user'><a href='#' target='_blank'><span class='header'>* "+name+"'s"+' '+'Game of Life *</span></a></h1>')
   },
   appendStartButton : function() {
     $('div#start-button').append("<button class='submit-button' id='start'>Start!</button>")

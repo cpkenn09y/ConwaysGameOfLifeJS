@@ -112,7 +112,7 @@ a {
   color: inherit;
 }
 
-h1.title:hover {
+span.header:hover {
   opacity: 0.8;
 }
 
