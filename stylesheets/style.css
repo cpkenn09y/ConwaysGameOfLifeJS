@@ -52,6 +52,7 @@ form#conway-data {
 
 input {
   width: 15em;
+  opacity: 0.8;
 }
 
 label#tip {
